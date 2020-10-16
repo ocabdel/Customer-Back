@@ -28,19 +28,25 @@ public class MonProjetGettingStartedDataJpaApplication {
 			return (args) -> {
 				// save a few customers
 				repository.save(Customer.builder()
-						.firstName("Jack")
-						.lastName("Bauer").build());
+						.firstName("Christian")
+						.lastName("MAMAY").build());
 				repository.save(Customer.builder()
-						.firstName("Chloe")
-						.lastName("O'Brian").build());
+						.firstName("Jonathan")
+						.lastName("ORDONEZ").build());
 				repository.save(Customer.builder()
-						.firstName("Kim")
-						.lastName("Bauer").build());
+						.firstName("Yorik")
+						.lastName("WEENEN").build());
+				repository.save(Customer.builder()
+						.firstName("Abderzak")
+						.lastName("OULAD CHAIB").build());
+				repository.save(Customer.builder()
+						.firstName("Noureddine")
+						.lastName("RACHDI").build());
 
 				// fetch all customers
 				log.info("Customers found with findAll():");
 				log.info("-------------------------------");
-				for (Customer customer : repository.findAll()) {
+				for (Customer customer : repository.findAllByLastNameContainingIgnoreCaseOrFirstNameContainingIgnoreCase("z", "z")) {
 					log.info(customer.toString());
 				}
 

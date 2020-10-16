@@ -7,8 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
-//    List<Customer> findByLastName(String lastName);
-//
-//    Customer findById(long id);
-
+    // Method filter for the criteria searched from the Front End
+    // public List<Customer> findAllByLastNameContainingIgnoreCase(String s);
+    public List<Customer> findAllByLastNameContainingIgnoreCaseOrFirstNameContainingIgnoreCase(String s1, String s2);
 }
